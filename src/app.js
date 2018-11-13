@@ -1,7 +1,9 @@
-import Name      from './name.js';
-import{ button } from './button.js';
+import Name      from './components/name.js';
+import Name2     from './components/name2.js';
+import{ button } from './components/button.js';
 
-const appdeux = React.createElement(Name);
+const name2   = React.createElement(Name2, {name: 'antoni'});
+const name    = React.createElement(Name);
 const btn     = React.createElement(button);
 
 class Hello extends React.Component{
@@ -14,7 +16,8 @@ class Hello extends React.Component{
       `<div id="container"> 
           <div>coucou</div>
           <Name />
-          ${appdeux}
+          ${name}
+          ${name2}
           ${btn}
       </div>`
       );

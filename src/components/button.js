@@ -1,6 +1,6 @@
 const button = () => {
     return (`
-    	<button> click </button>
+    	<button onclick="alert('coucou');"> click </button>
     	`);
 };
 export { button };

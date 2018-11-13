@@ -69,3 +69,7 @@ const parent = React.createElement('div', null,
 );
 
 ReactDOM.render(parent, document.getElementById('root'));
+
+
+/* -------------------------------------------------------------------------*/
+

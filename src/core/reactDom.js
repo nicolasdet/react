@@ -1,11 +1,5 @@
 (() => {
 
-
-    // Alias pour crée un élément
-    function createElement(el, props, ...children) {
-        return anElement(el, props, children);
-    }
-
     // classe générique pour l'héritage
     class Component {
         constructor(props) {
@@ -25,6 +19,7 @@
         ReactDOM.render(rootReactElement, rootDOMElement);
     }
 
+
     // Windows React contiendra la fonction créateElement && la classe générique (abstract) || j'hesite à les mettre à la racine de windows
     window.React = {
         createElement,
@@ -35,8 +30,10 @@
     window.ReactDOM = {
         // prend deux param L'élement à append dans l'élement de dom.
         render: (el, domEl) => {
+
             rootReactElement = el;
             rootDOMElement = domEl;
+            
             const currentDOM = rootReactElement;
 
             if(typeof(currentDOM) === 'string') {
