@@ -1,5 +1,4 @@
-      let rootDOMElement, rootReactElement;
-      //const REACT_CLASS = 'REACT_CLASS';
+let rootDOMElement, rootReactElement;
 
   /**
   * Fonction qui servira à gerer les differents elements HTML.
@@ -25,10 +24,5 @@
     function handleClassElement(clazz, props, children) {
             const reactElement = new clazz(props);
             reactElement.children = children;
-            //reactElement.type = REACT_CLASS;
-            if(reactElement.render().match('(<)(.*)(\/>)') != null){
-                innerElement = reactElement.render().match('(<)(.*)(\/>)')[2].trim();
-            }
-
-            return reactElement.render();
+            return reactElement.finalrender();
     }

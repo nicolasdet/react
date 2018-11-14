@@ -2,7 +2,9 @@
     /*
     anElement
     */
-  
+              if(reactElement.render().match('(<)(.*)(\/>)') != null){
+                innerElement = reactElement.render().match('(<)(.*)(\/>)')[2].trim();
+            }
 
 
     

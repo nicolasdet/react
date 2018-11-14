@@ -1,10 +1,16 @@
 (() => {
-
     // classe générique pour l'héritage
     class Component {
         constructor(props) {
             this.props = props;
         }
+
+        finalrender() {
+            
+            
+            return this.render();
+        } 
+
         setState(state) {
             this.state = Object.assign({}, this.state, state);
             reRender();
@@ -39,6 +45,7 @@
             if(typeof(currentDOM) === 'string') {
                return rootDOMElement.insertAdjacentHTML('afterend', currentDOM);
             }
+
            return rootDOMElement.appendChild(currentDOM);
         }
     };
