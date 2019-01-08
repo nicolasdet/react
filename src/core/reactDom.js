@@ -1,4 +1,5 @@
 (() => {
+    let rootDOMElement, rootReactElement;
     // classe générique pour l'héritage
     class Component {
         constructor(props) {
@@ -6,17 +7,15 @@
         }
 
         finalrender() {
-            
-            
             return this.render();
         } 
 
         setState(state) {
             this.state = Object.assign({}, this.state, state);
-            reRender();
+            //reRender();
         }
     }
-
+/*
     // On prend les variable de DOM Actuelle pour supprimer le dom et rapeller render avec les bons new elements
     function reRender() {
         while (rootDOMElement.hasChildNodes()) {
@@ -24,6 +23,7 @@
         }
         ReactDOM.render(rootReactElement, rootDOMElement);
     }
+    */
 
 
     // Windows React contiendra la fonction créateElement && la classe générique (abstract) || j'hesite à les mettre à la racine de windows

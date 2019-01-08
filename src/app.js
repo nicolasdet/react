@@ -1,25 +1,32 @@
 import Name      from './components/name.js';
 import Name2     from './components/name2.js';
-import{ button } from './components/button.js';
+import{ button, button2 } from './components/button.js';
 
-class Hello extends React.Component{
+class Hello extends React.Component {
+
+
   constructor(props) {
       super(props);
+
+      this.state = {
+        toto: 'toto'
+      };
+  }
+
+
+  changePrenom () {
+    this.setState({toto: 'tata'});
   }
 
   render() {
-    const name2   = React.createElement(Name2, {name: 'antoni'});
-    const name    = React.createElement(Name);
-    const btn     = React.createElement(button);
-
     return (
       `<div id="container"> 
           <div>coucou</div>
-          <Name />
+          ${React.createElement(Name)}
+          ${React.createElement(Name2,  {name: this.state.prenom})}
           ${React.createElement(Name2, {name: 'jéjé'})}
-          ${name}
-          ${name2}
-          ${btn}
+          ${React.createElement(button)}
+          ${React.createElement(button2, {onClick: this.changePrenom.bind(this) })}
       </div>
       `
       );

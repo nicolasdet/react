@@ -1,5 +1,3 @@
-let rootDOMElement, rootReactElement;
-
   /**
   * Fonction qui servira à gerer les differents elements HTML.
   **/
@@ -22,6 +20,7 @@ let rootDOMElement, rootReactElement;
     /** ------------------------  HandleClass  ------------------------------ **/ 
     // si l'élément crée via react.createElement est une class alors on l'instencie et on renvois le render
     function handleClassElement(clazz, props, children) {
+        
             const reactElement = new clazz(props);
             reactElement.children = children;
             return reactElement.finalrender();

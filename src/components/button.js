@@ -3,4 +3,24 @@ const button = () => {
     	<button onclick="alert('coucou');"> click </button>
     	`);
 };
-export { button };
+
+
+const button2 = (props) => {
+	console.log(props);
+
+    return (`
+    	<button onclick="${props.onClick()}"> click2	</button>
+    	`);
+};
+
+
+/*
+const button2 = (props) => {
+	console.log(props);
+    return (`
+    	<button onclick="alert('${props.texte}');"> click2	</button>
+    	`);
+};
+*/
+
+export { button, button2 };
