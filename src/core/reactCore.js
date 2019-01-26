@@ -6,12 +6,15 @@
   
   function createElement(element, props, ...children) {
         
+
         // Si c'est Une class on apelle une fonction qui va renvoyer le resultat de le fonction render de cette classe
         if (isClass(element)) {
+           //console.log(element);
             return handleClassElement(element, props, children)
         }
         // Si c'est une fonction stateLess on return le contenus de cette fonction (du html de préférence..)
         if (isStateLessComponent(element)) {
+
             return element(props);
         }
 
@@ -26,9 +29,33 @@
 
     /** ------------------------  HandleClass  ------------------------------ **/ 
     // si l'élément crée via react.createElement est une class alors on l'instencie et on renvois le render
-    function handleClassElement(clazz, props, children) {
+    function handleClassElement(element, props, children) {
         
-            const reactElement = new clazz(props);
-            reactElement.children = children;
+            const reactElement = new element(props);
+            //reactElement.children = children;
             return reactElement.finalrender();
     }
+
+
+
+    /**
+    * Si l'element à des props alors on ajoute l'attribute OU le listener si le props est un truc 'on' genre onClick
+    function appendPropsToElement(anElement, props) {
+        console.log(anElement);
+        console.log(props);
+        if (props == null) {
+            return;
+        }
+        Object.keys(props).forEach(propName => {
+          console.log(propName);
+            if (/^on.*$/.test(propName)) {
+              console.log('icci');
+              console.log(anElement);
+                anElement.addEventListener(propName.substring(2).toLowerCase(), props[propName]);
+            } else {
+                anElement.setAttribute(propName, props[propName]);
+            }
+        });
+        return;
+    }
+    **/

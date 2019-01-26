@@ -9,7 +9,8 @@ function isClass(func) {
     && /^class\s/.test(Function.prototype.toString.call(func));
 }
 
-// 
+/*
 function shouldAddEventListener(property) {
   return /^on.*$/.test(property);
 }
+*/

@@ -40,19 +40,23 @@ class Hello extends React.Component {
   }
 
   changePrenom () {
+    console.log('changePrenomx');
     this.setState({toto: 'tata'});
   }
 
-  // fonction render. Celle qui retournera a la base HTML de notre app.
+  // fonction render. Celle qui retournera la base HTML de notre app.
   render() {
+
     return (
       `<div id="container"> 
           <div>coucou</div>
+          <button onClick=${this.changePrenom()} >changer de prenom</button>
           ${React.createElement(Name)}
-          ${React.createElement(Name2,  {name: this.state.prenom})}
-          ${React.createElement(Name2, {name: 'jéjé'})}
+          ${React.createElement(Name2,  {name: this.state.toto})}
+          ${React.createElement(Name2,  {name: 'jéjé'})}
           ${React.createElement(button)}
-          ${React.createElement(button2, {onClick: this.changePrenom.bind(this) })}
+          ${React.createElement(button)}
+          ${React.createElement(button2, {onClick: () => this.changePrenom.bind(this) })}
       </div>
       `
       );

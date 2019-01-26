@@ -5,16 +5,19 @@
 
     // classe générique pour l'héritage permetant d'introduire les props et le state. 
     class Component {
+        
         constructor(props) {
             this.props = props;
         }
 
         finalrender() {
+            //console.log("yay");
             return this.render();
         } 
 
         setState(state) {
             this.state = Object.assign({}, this.state, state);
+            //return this.render();
             //reRender();
         }
     }
@@ -47,10 +50,11 @@
         render: (el, domEl) => {
 
             rootReactElement = el;
-            rootDOMElement = domEl;
-            
             const currentDOM = rootReactElement;
 
+
+            rootDOMElement = domEl;
+            
             if(typeof(currentDOM) === 'string') {
                return rootDOMElement.insertAdjacentHTML('afterend', currentDOM);
             }

@@ -10,4 +10,3 @@ export default class Name extends React.Component{
       );
   }
 }
-    //return React.createElement('div', null, `Hello world ${this.props.name}`);
